@@ -8,6 +8,12 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
 import Showrooms from './pages/Showrooms';
+import Orders from './pages/Orders';
+import Employees from './pages/Employees';
+import Transfers from './pages/Transfers';
+import Reports from './pages/Reports';
+import Settings from './pages/Settings';
+import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 
 // Protected Route Component
@@ -57,6 +63,42 @@ const AppRoutes: React.FC = () => {
         <Route path="/showrooms" element={
           <ProtectedRoute>
             <Showrooms />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/orders" element={
+          <ProtectedRoute>
+            <Orders />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/employees" element={
+          <ProtectedRoute>
+            <Employees />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/transfers" element={
+          <ProtectedRoute>
+            <Transfers />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/reports" element={
+          <ProtectedRoute>
+            <Reports />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/settings" element={
+          <ProtectedRoute>
+            <Settings />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/profile" element={
+          <ProtectedRoute>
+            <Profile />
           </ProtectedRoute>
         } />
         

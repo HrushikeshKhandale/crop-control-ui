@@ -5,83 +5,166 @@
 /* Import Ant Design styles */
 @import '~antd/dist/reset.css';
 
-/* Professional Agriculture ERP Design System */
-/* All colors MUST be HSL for consistency */
+/* Modern Agriculture ERP Design System */
+/* All colors MUST be HSL for consistency - Enhanced for Dark Mode */
 
 @layer base {
   :root {
-    /* Primary Agriculture Green Theme */
-    --primary: 120 60% 35%;
-    --primary-light: 120 50% 45%;
-    --primary-dark: 120 70% 25%;
+    /* Enhanced Primary Agriculture Green Theme */
+    --primary: 120 65% 40%;
+    --primary-light: 120 55% 50%;
+    --primary-dark: 120 75% 30%;
     --primary-foreground: 0 0% 98%;
+    --primary-muted: 120 40% 90%;
     
-    /* Secondary Earth Tones */
-    --secondary: 30 25% 85%;
-    --secondary-dark: 30 30% 75%;
-    --secondary-foreground: 30 25% 15%;
+    /* Enhanced Secondary Earth Tones */
+    --secondary: 30 30% 88%;
+    --secondary-dark: 30 35% 78%;
+    --secondary-foreground: 30 30% 12%;
+    --secondary-hover: 30 25% 85%;
     
-    /* Background System */
-    --background: 0 0% 99%;
+    /* Modern Background System */
+    --background: 0 0% 100%;
+    --background-alt: 0 0% 98%;
     --surface: 0 0% 100%;
-    --foreground: 220 15% 15%;
+    --surface-hover: 0 0% 97%;
+    --foreground: 220 20% 10%;
+    --foreground-muted: 220 15% 40%;
     
-    /* Status Colors */
-    --success: 120 60% 35%;
-    --warning: 45 90% 55%;
-    --error: 0 70% 50%;
-    --info: 210 90% 55%;
+    /* Enhanced Status Colors */
+    --success: 142 76% 36%;
+    --success-light: 142 69% 58%;
+    --warning: 38 92% 50%;
+    --warning-light: 38 80% 65%;
+    --error: 0 84% 60%;
+    --error-light: 0 72% 75%;
+    --info: 217 91% 60%;
+    --info-light: 217 80% 75%;
     
-    /* Neutral Grays */
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 15% 45%;
+    /* Enhanced Neutral System */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 20% 50%;
+    --muted-hover: 220 14% 93%;
     --border: 220 13% 91%;
+    --border-light: 220 13% 94%;
+    --input: 220 13% 91%;
+    --ring: 120 65% 40%;
     
-    /* Agriculture-specific colors */
-    --seed-brown: 30 40% 40%;
-    --fertilizer-blue: 210 80% 50%;
-    --pesticide-orange: 25 85% 55%;
-    --equipment-gray: 220 15% 40%;
+    /* Enhanced Agriculture-specific colors */
+    --seed-brown: 30 45% 35%;
+    --fertilizer-blue: 210 85% 45%;
+    --pesticide-orange: 25 90% 50%;
+    --equipment-gray: 220 20% 35%;
     
-    /* Shadows and Effects */
-    --shadow-sm: 0 1px 2px 0 hsl(220 15% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 15% 15% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(220 15% 15% / 0.1);
+    /* Modern Shadows and Effects */
+    --shadow-xs: 0 1px 2px 0 hsl(220 20% 15% / 0.03);
+    --shadow-sm: 0 1px 3px 0 hsl(220 20% 15% / 0.08);
+    --shadow-md: 0 4px 6px -1px hsl(220 20% 15% / 0.12);
+    --shadow-lg: 0 10px 15px -3px hsl(220 20% 15% / 0.15);
+    --shadow-xl: 0 20px 25px -5px hsl(220 20% 15% / 0.18);
+    --shadow-glow: 0 0 0 1px hsl(var(--primary) / 0.1), 0 0 20px hsl(var(--primary) / 0.2);
     
-    /* Gradients */
+    /* Enhanced Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-surface: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--muted)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
+    --gradient-card: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--background-alt)));
     
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', Consolas, monospace;
     
-    /* Spacing and Layout */
-    --radius: 8px;
-    --radius-sm: 4px;
-    --radius-lg: 12px;
+    /* Enhanced Spacing and Layout */
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
     
-    /* Animation */
+    /* Enhanced Animation */
     --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Sidebar Variables */
+    --sidebar-background: var(--surface);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--secondary);
+    --sidebar-accent-foreground: var(--secondary-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+    
+    /* Card Variables */
+    --card: var(--surface);
+    --card-foreground: var(--foreground);
+    
+    /* Popover Variables */
+    --popover: var(--surface);
+    --popover-foreground: var(--foreground);
+    
+    /* Destructive Variables */
+    --destructive: var(--error);
+    --destructive-foreground: var(--error-light);
+    
+    /* Accent Variables */
+    --accent: var(--secondary);
+    --accent-foreground: var(--secondary-foreground);
   }
   
   .dark {
-    /* Dark mode agriculture theme */
-    --primary: 120 50% 45%;
-    --primary-light: 120 40% 55%;
-    --primary-dark: 120 60% 35%;
-    --background: 220 15% 8%;
-    --surface: 220 15% 10%;
+    /* Enhanced Dark Mode Agriculture Theme */
+    --primary: 120 55% 50%;
+    --primary-light: 120 45% 60%;
+    --primary-dark: 120 65% 40%;
+    --primary-muted: 120 30% 20%;
+    
+    --secondary: 30 15% 20%;
+    --secondary-dark: 30 20% 15%;
+    --secondary-foreground: 30 25% 85%;
+    --secondary-hover: 30 15% 25%;
+    
+    --background: 220 20% 5%;
+    --background-alt: 220 20% 7%;
+    --surface: 220 20% 8%;
+    --surface-hover: 220 20% 12%;
     --foreground: 0 0% 95%;
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 65%;
-    --border: 220 15% 20%;
+    --foreground-muted: 220 15% 70%;
+    
+    --success: 142 69% 58%;
+    --success-light: 142 60% 70%;
+    --warning: 38 80% 65%;
+    --warning-light: 38 70% 75%;
+    --error: 0 72% 75%;
+    --error-light: 0 65% 85%;
+    --info: 217 80% 75%;
+    --info-light: 217 70% 85%;
+    
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 15% 65%;
+    --muted-hover: 220 20% 18%;
+    --border: 220 20% 18%;
+    --border-light: 220 20% 22%;
+    --input: 220 20% 18%;
+    
+    --seed-brown: 30 40% 55%;
+    --fertilizer-blue: 210 80% 65%;
+    --pesticide-orange: 25 85% 65%;
+    --equipment-gray: 220 15% 65%;
+    
+    --shadow-xs: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.12);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.18);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.25);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.35);
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--secondary) / 0.05));
+    --gradient-card: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--background-alt)));
   }
 }
 
 @layer components {
-  /* Agriculture ERP Custom Utilities */
+  /* Modern Agriculture ERP Utilities */
   .ag-gradient {
     background: var(--gradient-primary);
   }
@@ -90,76 +173,271 @@
     background: var(--gradient-surface);
   }
   
+  .ag-hero {
+    background: var(--gradient-hero);
+  }
+  
   .ag-shadow {
     box-shadow: var(--shadow-md);
   }
   
   .ag-card {
-    background: hsl(var(--surface));
+    background: var(--gradient-card);
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    backdrop-filter: blur(8px);
   }
   
   .ag-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    border-color: hsl(var(--border-light));
   }
   
-  /* Product Category Colors */
+  .ag-card-modern {
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-slow);
+    overflow: hidden;
+  }
+  
+  .ag-card-modern:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px) scale(1.02);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  
+  .ag-glass {
+    background: hsl(var(--surface) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Enhanced Product Category Colors */
   .category-seeds {
     color: hsl(var(--seed-brown));
     background: hsl(var(--seed-brown) / 0.1);
+    border: 1px solid hsl(var(--seed-brown) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
   }
   
   .category-fertilizer {
     color: hsl(var(--fertilizer-blue));
     background: hsl(var(--fertilizer-blue) / 0.1);
+    border: 1px solid hsl(var(--fertilizer-blue) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
   }
   
   .category-pesticide {
     color: hsl(var(--pesticide-orange));
     background: hsl(var(--pesticide-orange) / 0.1);
+    border: 1px solid hsl(var(--pesticide-orange) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
   }
   
   .category-equipment {
     color: hsl(var(--equipment-gray));
     background: hsl(var(--equipment-gray) / 0.1);
+    border: 1px solid hsl(var(--equipment-gray) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
   }
   
-  /* Status Indicators */
+  /* Enhanced Status Indicators */
   .status-success {
     color: hsl(var(--success));
     background: hsl(var(--success) / 0.1);
+    border: 1px solid hsl(var(--success) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
   }
   
   .status-warning {
     color: hsl(var(--warning));
     background: hsl(var(--warning) / 0.1);
+    border: 1px solid hsl(var(--warning) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
   }
   
   .status-error {
     color: hsl(var(--error));
     background: hsl(var(--error) / 0.1);
+    border: 1px solid hsl(var(--error) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .status-info {
+    color: hsl(var(--info));
+    background: hsl(var(--info) / 0.1);
+    border: 1px solid hsl(var(--info) / 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .hover-lift {
+    transition: var(--transition);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
   
   /* Layout utilities */
   .ag-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 1.5rem;
   }
   
   .ag-sidebar {
     background: hsl(var(--surface));
     border-right: 1px solid hsl(var(--border));
+    backdrop-filter: blur(8px);
   }
   
   .ag-header {
-    background: hsl(var(--surface));
+    background: hsl(var(--surface) / 0.95);
     border-bottom: 1px solid hsl(var(--border));
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  
+  .ag-navbar {
+    background: var(--gradient-card);
+    border-bottom: 1px solid hsl(var(--border));
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Responsive Grid */
+  .ag-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .ag-grid-sm {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .ag-grid-lg {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  
+  /* Modern Button Styles */
+  .btn-modern {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+  }
+  
+  .btn-modern:hover {
+    background: hsl(var(--primary-light));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-glass {
+    background: hsl(var(--surface) / 0.8);
+    border: 1px solid hsl(var(--border));
     backdrop-filter: blur(8px);
+    color: hsl(var(--foreground));
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  
+  .btn-glass:hover {
+    background: hsl(var(--surface));
+    border-color: hsl(var(--primary) / 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

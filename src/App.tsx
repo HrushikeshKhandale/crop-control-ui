@@ -3,8 +3,6 @@ import { ConfigProvider } from 'antd';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { DataProvider } from './context/DataContext';
-import { ThemeProvider } from './hooks/useTheme';
-import { GuidedTour } from './components/Tour/GuidedTour';
 import MainLayout from './components/Layout/MainLayout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -125,16 +123,13 @@ const antdTheme = {
 };
 
 const App = () => (
-  <ThemeProvider>
-    <ConfigProvider theme={antdTheme}>
-      <AuthProvider>
-        <DataProvider>
-          <AppRoutes />
-          <GuidedTour />
-        </DataProvider>
-      </AuthProvider>
-    </ConfigProvider>
-  </ThemeProvider>
+  <ConfigProvider theme={antdTheme}>
+    <AuthProvider>
+      <DataProvider>
+        <AppRoutes />
+      </DataProvider>
+    </AuthProvider>
+  </ConfigProvider>
 );
 
 export default App;

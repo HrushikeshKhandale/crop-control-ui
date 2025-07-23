@@ -5,7 +5,7 @@
 /* Import Ant Design styles */
 @import '~antd/dist/reset.css';
 
-/* Professional Agriculture ERP Design System */
+/* Professional Agriculture ERP Design System with Glass Morphism */
 /* All colors MUST be HSL for consistency */
 
 @layer base {
@@ -21,9 +21,10 @@
     --secondary-dark: 30 30% 75%;
     --secondary-foreground: 30 25% 15%;
     
-    /* Background System */
-    --background: 0 0% 99%;
+    /* Background System with Glass Effects */
+    --background: 0 0% 98%;
     --surface: 0 0% 100%;
+    --surface-glass: 255 255 255 / 0.8;
     --foreground: 220 15% 15%;
     
     /* Status Colors */
@@ -36,6 +37,7 @@
     --muted: 220 10% 96%;
     --muted-foreground: 220 15% 45%;
     --border: 220 13% 91%;
+    --border-glass: 255 255 255 / 0.2;
     
     /* Agriculture-specific colors */
     --seed-brown: 30 40% 40%;
@@ -43,45 +45,61 @@
     --pesticide-orange: 25 85% 55%;
     --equipment-gray: 220 15% 40%;
     
-    /* Shadows and Effects */
+    /* Advanced Shadows and Effects */
     --shadow-sm: 0 1px 2px 0 hsl(220 15% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 15% 15% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(220 15% 15% / 0.1);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 15% / 0.1), 0 2px 4px -1px hsl(220 15% 15% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 15% / 0.1), 0 4px 6px -2px hsl(220 15% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 15% / 0.1), 0 10px 10px -5px hsl(220 15% 15% / 0.04);
+    --shadow-glass: 0 8px 32px 0 hsl(220 15% 15% / 0.37);
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-surface: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--muted)));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    --gradient-bg: linear-gradient(135deg, hsl(120 60% 95%), hsl(210 40% 95%));
     
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', Consolas, monospace;
     
     /* Spacing and Layout */
-    --radius: 8px;
-    --radius-sm: 4px;
-    --radius-lg: 12px;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
     
     /* Animation */
-    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Glass Morphism Variables */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-blur: 16px;
   }
   
   .dark {
-    /* Dark mode agriculture theme */
+    /* Dark mode agriculture theme with glass effects */
     --primary: 120 50% 45%;
     --primary-light: 120 40% 55%;
     --primary-dark: 120 60% 35%;
     --background: 220 15% 8%;
     --surface: 220 15% 10%;
+    --surface-glass: 30 30 30 / 0.8;
     --foreground: 0 0% 95%;
     --muted: 220 15% 15%;
     --muted-foreground: 220 10% 65%;
     --border: 220 15% 20%;
+    --border-glass: 255 255 255 / 0.1;
+    --gradient-bg: linear-gradient(135deg, hsl(220 15% 12%), hsl(220 20% 8%));
+    --glass-bg: rgba(30, 30, 30, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 }
 
 @layer components {
-  /* Agriculture ERP Custom Utilities */
+  /* Agriculture ERP Custom Utilities with Glass Morphism */
   .ag-gradient {
     background: var(--gradient-primary);
   }
@@ -104,9 +122,92 @@
   
   .ag-card:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
-  
+
+  /* Glass Morphism Components */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .glass-surface {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Animated Gradients */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Smooth Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.9); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+
   /* Product Category Colors */
   .category-seeds {
     color: hsl(var(--seed-brown));
@@ -161,6 +262,24 @@
     border-bottom: 1px solid hsl(var(--border));
     backdrop-filter: blur(8px);
   }
+
+  /* Custom Menu Styles */
+  .custom-menu .ant-menu-item {
+    margin: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .custom-menu .ant-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(4px);
+  }
+
+  .custom-menu .ant-menu-item-selected {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    font-weight: 600;
+  }
 }
 
 @layer base {
@@ -169,19 +288,20 @@
   }
 
   body {
-    background: hsl(var(--background));
+    background: var(--gradient-bg);
     color: hsl(var(--foreground));
     font-family: var(--font-sans);
     line-height: 1.6;
+    min-height: 100vh;
   }
   
   /* Ant Design Theme Customization */
   .ant-layout {
-    background: hsl(var(--background)) !important;
+    background: transparent !important;
   }
   
   .ant-layout-sider {
-    background: hsl(var(--surface)) !important;
+    background: transparent !important;
   }
   
   .ant-menu {
@@ -199,27 +319,67 @@
   }
   
   .ant-card {
-    background: hsl(var(--surface));
-    border: 1px solid hsl(var(--border));
-    box-shadow: var(--shadow-sm);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    border-radius: var(--radius);
   }
   
   .ant-table {
-    background: hsl(var(--surface));
+    background: transparent;
   }
   
   .ant-table-thead > tr > th {
-    background: hsl(var(--muted));
+    background: rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid hsl(var(--border));
+    backdrop-filter: blur(10px);
   }
   
   .ant-btn-primary {
     background: hsl(var(--primary));
     border-color: hsl(var(--primary));
+    box-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
   }
   
   .ant-btn-primary:hover {
     background: hsl(var(--primary-light));
     border-color: hsl(var(--primary-light));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.4);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .ag-container {
+      padding: 0 16px;
+    }
+    
+    .glass-card {
+      margin: 8px 0;
+    }
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
   }
 }

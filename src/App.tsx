@@ -14,6 +14,8 @@ import Transfers from './pages/Transfers';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 import Profile from './pages/Profile';
+import Bills from './pages/Bills';
+import Stock from './pages/Stock';
 import NotFound from './pages/NotFound';
 
 // Protected Route Component
@@ -99,6 +101,18 @@ const AppRoutes: React.FC = () => {
         <Route path="/profile" element={
           <ProtectedRoute>
             <Profile />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/bills" element={
+          <ProtectedRoute>
+            <Bills />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/stock" element={
+          <ProtectedRoute>
+            <Stock />
           </ProtectedRoute>
         } />
         
